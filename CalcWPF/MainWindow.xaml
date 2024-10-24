@@ -1,0 +1,44 @@
+﻿<Window x:Class="CalcWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalcWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="585" Width="701" ResizeMode="NoResize">
+    <Grid Height="577" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="TB1" Grid.Column="1" HorizontalAlignment="Left" Margin="64,89,0,0" TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" VerticalAlignment="Top" Width="259" Height="47"/>
+        <TextBox x:Name="TB2" Grid.Column="1" HorizontalAlignment="Left" Margin="64,0,0,0" TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" VerticalAlignment="Center" Width="259" Height="47"/>
+        <ComboBox x:Name="System1" Grid.Column="1" SelectedIndex="1" Margin="439,89,64,441" SelectionChanged="System1_SelectionChanged_1" >
+            <ComboBoxItem Content="Двійкова"/>
+            <ComboBoxItem Content="Десяткова"/>
+            <ComboBoxItem Content="Вісімкова"/>
+            <ComboBoxItem Content="Шістнадцяткова"/>
+        </ComboBox>
+        <ComboBox x:Name="actionBox" Margin="64,177,64,353" Grid.Column="1">
+            <ComboBoxItem Content="+"/>
+            <ComboBoxItem Content="-"/>
+            <ComboBoxItem Content="/"/>
+            <ComboBoxItem Content="*"/>
+        </ComboBox>
+        <ComboBox x:Name="System2" Grid.Column="1" SelectedIndex="1" Margin="439,265,64,265" SelectionChanged="System2_SelectionChanged">
+            <ComboBoxItem Content="Двійкова"/>
+            <ComboBoxItem Content="Десяткова"/>
+            <ComboBoxItem Content="Вісімкова"/>
+            <ComboBoxItem Content="Шістнадцяткова"/>
+        </ComboBox>
+        
+        <Button x:Name="doButton" Grid.Column="1" Content="Розрахувати" HorizontalAlignment="Center" Margin="0,339,0,0" VerticalAlignment="Top" Height="43" Width="128" Click="doButton_Click"/>
+        <TextBox x:Name="result10" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="64,455,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="Результат у десятковій" VerticalAlignment="Top" Width="120" Height="57"/>
+        <TextBox x:Name="result2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="517,455,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="Результат у двійковій" VerticalAlignment="Top" Width="120" Height="57"/>
+        <TextBox x:Name="result8" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="366,455,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="Результат у вісімковій" VerticalAlignment="Top" Width="120" Height="57"/>
+        <TextBox x:Name="result16" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="217,455,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="Результат у шістнадцятковій" VerticalAlignment="Top" Width="120" Height="57"/>
+        <Label Content="Введіть число у вибраній&#xD;&#xA;системі числення" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="64,50,0,0" VerticalAlignment="Top" Width="223" Height="39"/>
+        <Label Content="Введіть число у вибраній&#xA;системі числення" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="64,224,0,0" VerticalAlignment="Top" Width="223" Height="39"/>
+
+    </Grid>
+</Window>
